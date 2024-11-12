@@ -1,0 +1,32 @@
+# The 'target-replacements' section defines a set of replacement rules to modify the items in the villager's trades.
+# Each rule will specify the conditions under which certain trade items should be replaced with new ones.
+trade-item-replacements:
+  # Each replacement rule is identified by an index (e.g., 0, 1, 2, etc.),
+  # where each rule corresponds to a unique trade modification configuration.
+  0:
+    # 'target-item' specifies the item in the villager's current trade that will be replaced.
+    # The trade modification will only apply to this item.
+    target-item: EMERALD
+    # 'input-replacement' is the item the player must give to the villager in exchange for the trade.
+    # This replaces the original input item required for the trade, allowing customization of the input.
+    input-replacement: DIAMOND_BLOCK
+    # 'output-replacement' specifies the item the villager will give back to the player after the trade.
+    # This replaces the original output item, allowing you to change what the player receives.
+    output-replacement: GOLD_BLOCK
+
+# This section defines a list of items that are NOT allowed as outputs in villager trades.
+# If a villager's trade offers one of these items as an output, the plugin removes that result.
+restricted-outputs:
+  - "DIAMOND_SWORD"
+  - "DIAMOND_PICKAXE"
+  - "DIAMOND_AXE"
+  - "DIAMOND_SHOVEL"
+  - "DIAMOND_HOE"
+  - "DIAMOND_HELMET"
+  - "DIAMOND_CHESTPLATE"
+  - "DIAMOND_LEGGINGS"
+  - "DIAMOND_BOOTS"
+
+# The 'config-version' represents the version of the configuration file or trade logic being used.
+# This helps in tracking the version of the trade setup, which can be useful for updating and managing changes to trade configurations.
+settings-version: 1.0

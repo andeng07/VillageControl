@@ -1,0 +1,4 @@
+name: VillageControl
+main: me.centauri07.villagecontrol.plugin.VillageControlPlugin
+version: 1.0
+api-version: 1.16
