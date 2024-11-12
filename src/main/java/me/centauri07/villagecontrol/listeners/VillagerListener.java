@@ -35,7 +35,10 @@ public class VillagerListener implements Listener {
     public void onVillagerAcquireTrade(VillagerAcquireTradeEvent event) {
         MerchantRecipe recipe = event.getRecipe();
 
-        if (villagerModifier.isRestricted(recipe)) event.setCancelled(true);
+        if (villagerModifier.isRestricted(recipe)) {
+            event.setCancelled(true);
+            return;
+        }
 
         event.setRecipe(villagerModifier.modifyRecipe(event.getRecipe()));
     }

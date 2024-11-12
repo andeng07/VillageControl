@@ -39,13 +39,12 @@ public class VillagerModifier {
     }
 
     public boolean isRestricted(MerchantRecipe recipe) {
-        boolean isTypeRestricted = recipe.getIngredients().stream()
-                .anyMatch(itemStack -> settings.restrictedItems.contains(itemStack.getType()));
+        boolean isTypeRestricted = settings.restrictedItems.contains(recipe.getResult().getType());
 
         boolean isEnchantedRestricted =
                 recipe.getResult().getType() == Material.ENCHANTED_BOOK &&
-                recipe.getResult().getItemMeta() != null &&
-                ((EnchantmentStorageMeta) recipe.getResult().getItemMeta()).hasStoredEnchant(Enchantment.MENDING);
+                        recipe.getResult().getItemMeta() != null &&
+                        ((EnchantmentStorageMeta) recipe.getResult().getItemMeta()).hasStoredEnchant(Enchantment.MENDING);
 
         return isTypeRestricted || isEnchantedRestricted;
     }
